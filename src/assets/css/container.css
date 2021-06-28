@@ -1,0 +1,12 @@
+/*居中容器*/
+.container {
+  width: 1180px;
+  margin: 0 auto;
+  background-color:rgb(31, 41, 55) ;
+}
+.right{
+  float:right;
+}
+.left{
+  float:left;
+}
