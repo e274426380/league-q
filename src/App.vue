@@ -1,7 +1,16 @@
 <template>
 
   <league-nav>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <league-carousel/>
+      </div>
+      <div class="col-2"></div>
+
+    </div>
     <league-footer/>
+
   </league-nav>
 
 
@@ -10,8 +19,9 @@
 <script>
   import LeagueNav from "@/components/league-nav";
   import LeagueFooter from "@/components/league-footer";
+  import LeagueCarousel from "@/components/league-carousel";
   export default {
-    components: {LeagueFooter, LeagueNav},
+    components: {LeagueCarousel, LeagueFooter, LeagueNav},
     data () {
       return {
         lang: "zh-CN",
@@ -42,5 +52,6 @@
     font-size: 16px;
     font-family: "微软雅黑";
     color: rgb(255, 255, 255);
+    background-color: rgb(17, 24, 39);
   }
 </style>

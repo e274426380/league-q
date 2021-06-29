@@ -39,7 +39,7 @@
         <div class="col-2"></div>
       </div>
     </q-header>
-    <!--左侧任务栏，用来适配移动端的顶部导航栏-->
+    <!--左侧任务栏，用来适配移动端的顶部导航栏，未做完-->
     <!--<q-drawer-->
       <!--v-model="drawerLeft"-->
       <!--show-if-above-->
@@ -66,7 +66,6 @@
       <!--</q-scroll-area>-->
     <!--</q-drawer>-->
     <q-page-container>
-
       <slot></slot>
     </q-page-container>
 
