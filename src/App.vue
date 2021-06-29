@@ -1,20 +1,10 @@
 <template>
-  <q-layout view="hHh lpR fFf" >
-    <league-nav/>
 
-    <q-page-container>
-      <!--<div class="row bg-accent">-->
-        <!--<div class="col">1</div>-->
-      <!--</div>-->
-      <!--<div class="row bg-deep-purple-6">-->
-        <!--<div style="order: 2">Second column</div>-->
-        <!--<div class="order-last">Third column</div>-->
-        <!--<div class="order-first">First column</div>-->
-      <!--</div>-->
-      <league-footer/>
-    </q-page-container>
+  <league-nav>
+    <league-footer/>
+  </league-nav>
 
-  </q-layout>
+
 </template>
 
 <script>
