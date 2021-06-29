@@ -1,33 +1,40 @@
 <template>
   <q-header elevated class="nav-menu bg-i-grey text-grey-8 q-py-xs" height-hint="58">
-    <q-toolbar>
-      <q-toolbar-title>
-        <q-btn flat no-caps no-wrap class="q-ml-xs" v-if="$q.screen.gt.xs">
-          <img alt="icp-logo" class="nav-icon" src="@/assets/images/logo@2x.png"/>
-        </q-btn>
-      </q-toolbar-title>
-      <q-btn stretch flat :label="$t('button.library')"
-             no-caps
-             type="a" href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men" target="__blank"/>
-      <q-btn stretch flat :label="$t('button.dapps')"
-             no-caps/>
-      <q-btn stretch flat :label="$t('button.forum')"
-             no-caps
-             type="a" href="https://www.icpleague.com/" target="__blank"/>
-      <q-btn stretch flat :label="$t('button.grant')"
-             no-caps
-             type="a" href="https://dfinity.org/grants/" target="__blank"/>
-      <q-btn stretch flat :label="$t('button.language')"
-             no-caps
-             @click="changeLang()"/>
-      <q-btn
-        rounded
-        class="q-btn-i"
-        :label="$t('button.login')"
-        style="margin-left: 20px"
-        no-caps
-      />
-    </q-toolbar>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-md-8 col-xs-12">
+        <q-toolbar>
+          <q-toolbar-title>
+            <q-btn flat no-caps no-wrap class="q-ml-xs" v-if="$q.screen.gt.xs">
+              <img alt="icp-logo" class="nav-icon" src="@/assets/images/logo@2x.png"/>
+            </q-btn>
+          </q-toolbar-title>
+
+          <q-btn stretch flat :label="$t('button.library')"
+                 no-caps
+                 type="a" href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men" target="__blank"/>
+          <q-btn stretch flat :label="$t('button.dapps')"
+                 no-caps/>
+          <q-btn stretch flat :label="$t('button.forum')"
+                 no-caps
+                 type="a" href="https://www.icpleague.com/" target="__blank"/>
+          <q-btn stretch flat :label="$t('button.grant')"
+                 no-caps
+                 type="a" href="https://dfinity.org/grants/" target="__blank"/>
+          <q-btn stretch flat :label="$t('button.language')"
+                 no-caps
+                 @click="changeLang()"/>
+          <q-btn
+            rounded
+            class="q-btn-i"
+            :label="$t('button.login')"
+            style="margin-left: 20px"
+            no-caps
+          />
+        </q-toolbar>
+      </div>
+      <div class="col-2"></div>
+    </div>
   </q-header>
 </template>
 

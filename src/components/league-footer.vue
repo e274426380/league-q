@@ -2,9 +2,9 @@
   <div class="footer">
     <div class="footer-content">
       <div>
-      <div class="row" :gutter="20">
+      <div class="row">
         <div class="col-3"></div>
-        <div class="col-4" :span="20">
+        <div class="col-sm-4 col-xs-12">
           <div>
             <p>ICPLeague</p>
             <p>{{$t("footer.subtitle")}}</p>
@@ -18,7 +18,7 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-sm-4 col-xs-12">
           <div class="QR">
             <img class="QRCodeImg" alt="QRCode" src="@/assets/images/BBSQR.png">
             <p>{{$t("footer.scanQR")}}</p>

@@ -19,11 +19,10 @@
 
 <script>
   import LeagueNav from "@/components/league-nav";
-  import LeagueFooter from "./components/league-footer";
+  import LeagueFooter from "@/components/league-footer";
   export default {
     components: {LeagueFooter, LeagueNav},
     data () {
-
       return {
         lang: "zh-CN",
       }
@@ -53,15 +52,5 @@
     font-size: 16px;
     font-family: "微软雅黑";
     color: rgb(255, 255, 255);
-  }
-  /*导航栏CSS*/
-  .nav-menu {
-    box-shadow: 0px 3px 10px 0px rgba(153, 153, 153, 0.2)!important;
-  }
-  .nav-icon {
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    margin-left: 30px;
   }
 </style>
