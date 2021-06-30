@@ -1,19 +1,19 @@
 <template>
-  <el-row>
-    <el-col :span="11">
+  <div class="row">
+    <div class="col-5">
       <div class="grid-content">
-        <el-row class="card-title">
-          <el-col :span="20">
+        <div class="row card-title">
+          <div class="col-10">
             <img class="body-logo" alt="library" src="@/assets/images/icon/cd_Library@2x.png">
-            <b>{{$t('button.library')}}</b>
-          </el-col>
+            <b >{{$t('button.library')}}</b>
+          </div>
           <a href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men">
-            <el-col :span="4">
+            <div class="col-2">
               <i class="el-icon-arrow-right"></i><p>{{$t('button.more')}}</p>
-            </el-col>
+            </div>
           </a>
-        </el-row>
-        <el-card class="card-bg">
+        </div>
+        <q-card class="card-bg">
           <div class="card-container" v-for="(data,index) in libraryData" v-if="index < 5" :key="index">
             <a :href="data.url" class="card-url">
                    <span class="left-ball">
@@ -33,24 +33,24 @@
               <div v-else style="padding-bottom: 10px"></div>
             </a>
           </div>
-        </el-card>
+        </q-card>
       </div>
-    </el-col>
-    <el-col :span="11" :offset="2">
+    </div>
+    <div  class="col-5 offset-2">
       <div class="grid-content">
-        <el-row class="card-title">
-          <el-col :span="20">
+        <div class="row card-title">
+          <div class="col-10">
             <img class="body-logo" alt="forum" src="@/assets/images/icon/cd_Forum@2x.png">
             <b>{{$t('button.forum')}}</b>
-          </el-col>
+          </div>
           <a href="https://www.icpleague.com/">
-            <el-col :span="4">
+            <div class="col-2">
               <i class="el-icon-arrow-right"></i>
               <p>{{$t('button.more')}}</p>
-            </el-col>
+            </div>
           </a>
-        </el-row>
-        <el-card class="card-bg">
+        </div>
+        <q-card class="card-bg">
           <div class="card-container" v-for="(data,index) in forumData" v-if="index < 5" :key="index">
             <a :href="'https://www.icpleague.com/thread/'+data.threadId" class="card-url">
                   <span class="left-ball">
@@ -69,10 +69,10 @@
               <div v-else style="padding-bottom: 10px"></div>
             </a>
           </div>
-        </el-card>
+        </q-card>
       </div>
-    </el-col>
-  </el-row>
+    </div>
+  </div>
 </template>
 
 <script>

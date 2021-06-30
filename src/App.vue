@@ -5,6 +5,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <league-carousel/>
+        <league-card/>
       </div>
       <div class="col-2"></div>
 
@@ -20,8 +21,9 @@
   import LeagueNav from "@/components/league-nav";
   import LeagueFooter from "@/components/league-footer";
   import LeagueCarousel from "@/components/league-carousel";
+  import LeagueCard from "./components/league-card";
   export default {
-    components: {LeagueCarousel, LeagueFooter, LeagueNav},
+    components: {LeagueCard, LeagueCarousel, LeagueFooter, LeagueNav},
     data () {
       return {
         lang: "zh-CN",
