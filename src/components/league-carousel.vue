@@ -5,7 +5,7 @@
       v-model="slide"
       navigation
       infinite
-      :autoplay="1000000"
+      :autoplay="10000"
       arrows
       transition-prev="slide-right"
       transition-next="slide-left"
@@ -13,27 +13,9 @@
       @mouseleave="autoplay = true"
       height="400"
     >
-      <!--<q-carousel-slide :name="1" >-->
-        <!--<a href="https://www.icpleague.com/" target="_blank">-->
-          <!--<img alt="null" src="@/assets/images/ICPLeague.png"/></a>-->
-      <!--</q-carousel-slide>-->
-      <!--<q-carousel-slide :name="2">-->
-        <!--<a href="https://dfinity.org/" target="_blank">-->
-          <!--<img alt="null" src="@/assets/images/Carousel2.png"/>-->
-        <!--</a>-->
-      <!--</q-carousel-slide>-->
-      <!--<q-carousel-slide :name="3">-->
-        <!--<a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU1NzQyMA==-->
-          <!--&mid=2247485305&idx=1&sn=488d2349f64f5456c377452bf6e638c3&chksm=-->
-          <!--9fc790faa8b019ecc5242ba89731d3240fe1e74f7046d9f7654c8b6d8d325ade340e03bec0fc&mpshare=-->
-          <!--1&scene=23&srcid=0518S6IbFAmiNrmv0hx3UcpT&sharer_sharetime=1621341022346&sharer_shareid=f1edc-->
-          <!--3c69048c31e48f88397daab2e99%23rd">-->
-          <!--<img alt="null" src="@/assets/images/banner1.webp.jpg"/>-->
-        <!--</a>-->
-      <!--</q-carousel-slide>-->
       <q-carousel-slide :name="1" img-src="@/assets/images/ICPLeague.png" @click="getUrl(1)">
       </q-carousel-slide>
-      <q-carousel-slide :name="2" img-src="@/assets/images/Carousel2.png" @click="getUrl(2)"/>
+      <q-carousel-slide :name="2" img-src="@/assets/images/dfinity-background.png" @click="getUrl(2)"/>
       <q-carousel-slide :name="3" img-src="@/assets/images/banner1.webp.jpg" @click="getUrl(3)"/>
     </q-carousel>
 </template>
@@ -57,6 +39,7 @@
         }
       },
       methods: {
+        // 因为很难直接写a标签，所以轮播图用js的方法打开超链接
         getUrl(x) {
           const y=x-1;
           window.open(this.url[y]);
