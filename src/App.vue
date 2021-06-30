@@ -2,12 +2,18 @@
 
   <league-nav>
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8 col-xs-12">
-        <league-carousel/>
-        <league-card/>
+      <div class="col-md-1"></div>
+      <div class="col-md-10 col-xs-12">
+        <div class="row">
+          <div class="col-md-10 offset-md-1 col-xs-12">
+
+            <league-carousel/>
+            <league-card/>
+          </div>
+        </div>
+
       </div>
-      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
 
     </div>
     <league-footer/>
@@ -21,7 +27,7 @@
   import LeagueNav from "@/components/league-nav";
   import LeagueFooter from "@/components/league-footer";
   import LeagueCarousel from "@/components/league-carousel";
-  import LeagueCard from "./components/league-card";
+  import LeagueCard from "@/components/league-card";
   export default {
     components: {LeagueCard, LeagueCarousel, LeagueFooter, LeagueNav},
     data () {

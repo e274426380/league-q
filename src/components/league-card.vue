@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-md-5 col-xs-12">
+    <div class="col-i-card col-xs-12">
       <div class="grid-content">
         <div class="row card-title">
           <div class="col-10">
@@ -36,7 +36,7 @@
         </q-card>
       </div>
     </div>
-    <div  class="col-md-5 offset-md-2 col-xs-12">
+    <div class="col-i-card col-xs-12">
       <div class="grid-content">
         <div class="row card-title">
           <div class="col-10">
@@ -233,6 +233,10 @@
 </script>
 
 <style lang="scss" scoped>
+  .col-i-card{
+    width: 42%;
+    margin-left: 5%;
+  }
   /*卡片抬头*/
   .card-title {
     line-height: 32px;
