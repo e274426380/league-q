@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-5">
+    <div class="col-md-5 col-xs-12">
       <div class="grid-content">
         <div class="row card-title">
           <div class="col-10">
@@ -9,12 +9,12 @@
           </div>
           <a href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men">
             <div class="col-2">
-              <i class="el-icon-arrow-right"></i><p>{{$t('button.more')}}</p>
+              <q-icon name="bi-chevron-right" /><p>{{$t('button.more')}}</p>
             </div>
           </a>
         </div>
         <q-card class="card-bg">
-          <div class="card-container" v-for="(data,index) in libraryData" v-if="index < 5" :key="index">
+          <div class="card-container q-ml-lg" v-for="(data,index) in libraryData" v-if="index < 5" :key="index">
             <a :href="data.url" class="card-url">
                    <span class="left-ball">
                     {{data.username}}
@@ -36,7 +36,7 @@
         </q-card>
       </div>
     </div>
-    <div  class="col-5 offset-2">
+    <div  class="col-md-5 offset-md-2 col-xs-12">
       <div class="grid-content">
         <div class="row card-title">
           <div class="col-10">
@@ -45,13 +45,12 @@
           </div>
           <a href="https://www.icpleague.com/">
             <div class="col-2">
-              <i class="el-icon-arrow-right"></i>
-              <p>{{$t('button.more')}}</p>
+              <q-icon name="bi-chevron-right" /><p>{{$t('button.more')}}</p>
             </div>
           </a>
         </div>
         <q-card class="card-bg">
-          <div class="card-container" v-for="(data,index) in forumData" v-if="index < 5" :key="index">
+          <div class="card-container  q-ml-lg" v-for="(data,index) in forumData" v-if="index < 5" :key="index">
             <a :href="'https://www.icpleague.com/thread/'+data.threadId" class="card-url">
                   <span class="left-ball">
                     {{data.username}}
@@ -181,7 +180,9 @@
                 // 头像地址
                 avatarUrl:"",
               },
-            ],}
+            ],
+            index:0,
+          }
       },
       methods:{
         getForumEssence(){
@@ -258,21 +259,19 @@
   }
   /*卡片容器宽度，用于控制横线的长度*/
   .card-container {
-    width: 480px;
+    /*width: 480px;*/
     padding: 20px 0 0 5px;
   }
   .card-container:hover {
     background: #485d7c;
     border-radius: 20px;
   }
-  .el-card{
+  .q-card{
     background: #1F2937;
     border: 0;
     /*box-shadow: 0px 3px 10px 0px rgba(153, 153, 153, 0.2);*/
     border-radius: 20px;
     color:white;
-  }
-  .el-card__body{
     padding-bottom: 0
   }
   .left-ball{

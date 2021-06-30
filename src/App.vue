@@ -2,12 +2,12 @@
 
   <league-nav>
     <div class="row">
-      <div class="col-2"></div>
-      <div class="col-8">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 col-xs-12">
         <league-carousel/>
         <league-card/>
       </div>
-      <div class="col-2"></div>
+      <div class="col-md-2"></div>
 
     </div>
     <league-footer/>

@@ -29,9 +29,9 @@
                    @click="changeLang()"/>
             <q-btn
               rounded
-              class="q-btn-i"
+              class="q-btn-i q-ml-md"
               :label="$t('button.login')"
-              style="margin-left: 20px"
+
               no-caps
             />
           </q-toolbar>
