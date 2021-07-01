@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="subtitle">
+    <div class="subtitle q-ml-xl">
       <img class="body-logo" alt="DApps" src="@/assets/images/icon/cd_Dapps@2x.png">
       <b>{{$t('button.dapps')}}</b>
       <!--以页码的形式展示-->
@@ -9,48 +9,30 @@
       <!--v-for="(item, index) in pageNum"-->
       <!--:key="index">Tab {{index+1}}</el-button>-->
       <!--以tag的形式筛选-->
-      <el-button type="danger" round @click="dappChange('All')"
-                 :class="{active:'All'===tagButton}">All</el-button>
-      <el-button type="danger" round @click="dappChange(tag)"
+      <q-btn unelevated class="q-btn-i q-ml-lg" type="danger" round @click="dappChange('All')"
+                 :class="{active:'All'===tagButton}">All</q-btn>
+      <q-btn unelevated class="q-btn-i q-ml-lg" type="danger" round @click="dappChange(tag)"
                  :class="{active:tag===tagButton}"
                  v-for="(tag, index) in tags"
-                 :key="index">{{tag}}</el-button>
+                 :key="index">{{tag}}</q-btn>
     </div>
-    <div class="dapps">
-      <div class="row">
-        <div class="col-2 right-move" v-for="(dapp,index) in dappsData"
-                :key="index"
-                >
-          <template v-if="index>0&&index<4||index>5&&index<9">
-            <a :href="dapp.url" class="dapps-url">
-              <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>
-                <br/>
-                <b>{{dapp.title}}</b></div></a>
-          </template>
-          <!--给每行开头空一行保留箭头的位置-->
-          <div class="col-2 right-move" :offset="1"
-               v-else-if="index==0||index==5">
-            <a :href="dapp.url" class="dapps-url">
-              <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>
-                <br/>
-                <b>{{dapp.title}}</b></div></a>
-          </div>
-          <!--每行结尾-->
-          <div class="col-2" v-else>
-            <a :href="dapp.url" class="dapps-url">
-              <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>
-                <br/>
-                <b>{{dapp.title}}</b></div></a>
+    <div class="dapps row no-wrap items-center">
+        <div class="col-1 dapps-left-arrow q-mt-lg" @click="prePage">
+          <img alt="" src="@/assets/images/icon/dapps_left_nor.png"/>
+        </div>
+        <div class="row col-10">
+          <div class="col-2 right-move" v-for="(dapp,index) in dappsData" :key="index">
+            <div class="col-2 q-mt-lg">
+              <a :href="dapp.url" class="dapps-url">
+                <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>
+                  <br/>
+                  <b>{{dapp.title}}</b></div></a>
+            </div>
           </div>
         </div>
-
-      </div>
-      <div class="dapps-left-arrow" @click="prePage">
-        <img alt="" src="@/assets/images/icon/dapps_left_nor.png"/>
-      </div>
-      <div class="dapps-right-arrow" @click="nextPage">
-        <img alt="" src="@/assets/images/icon/dapps_right_nor.png"/>
-      </div>
+      <div class="col-1 dapps-right-arrow q-mt-lg q-pl-md" @click="nextPage">
+      <img alt="" src="@/assets/images/icon/dapps_right_nor.png"/>
+    </div>
     </div>
   </div>
 </template>
@@ -207,6 +189,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/css/base.css";
   .body-logo {
     width: 32px;
     height: 32px;
@@ -216,16 +199,12 @@
   }
   /*dapps的头部*/
   .subtitle {
-    margin: 20px auto 20px auto;
-    .el-button--danger{
+    .q-btn-i{
       width: 131px;
-      height: 40px;
       background-color:transparent;
-      border-radius: 20px;
-      border-color:#EA3D5A;
       color: #EA3D5A;
-      font-weight: bold;
-      font-size:16px;
+      /* 按钮设置边框 */
+      border:1px solid #EA3D5A;
     }
     b{
       margin-right: 30px;
@@ -234,6 +213,7 @@
       font-weight: bold;
     }
   }
+  /*tag按钮激活后*/
   .active{
     background: #EA3D5A!important;
     color: white!important;
@@ -247,11 +227,11 @@
       width: 150px;
       height: 150px;
     }
-    .el-row {
+    .row {
       margin-top: 40px;
     }
     /*dapps图标控制*/
-    .el-row .el-col{
+    .row .col{
       float: left;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -279,9 +259,6 @@
   }
   /*左右箭头样式*/
   .dapps-left-arrow{
-    position: absolute;
-    bottom:170px;
-    left: 5px;
     img{
       width: 45px;
       height: 90px;
@@ -292,9 +269,6 @@
     }
   }
   .dapps-right-arrow{
-    position: absolute;
-    bottom:170px;
-    right: 15px;
     img{
       width: 45px;
       height: 90px;
