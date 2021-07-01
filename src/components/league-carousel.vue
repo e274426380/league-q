@@ -13,7 +13,7 @@
       @mouseleave="autoplay = true"
       height="400"
     >
-      <q-carousel-slide :name="1" img-src="@/assets/images/ICPLeague.png" @click="getUrl(1)">
+      <q-carousel-slide :name="1" img-src="@/assets/images/ICPLeaguePic.png" @click="getUrl(1)">
       </q-carousel-slide>
       <q-carousel-slide :name="2" img-src="@/assets/images/dfinity-background.png" @click="getUrl(2)"/>
       <q-carousel-slide :name="3" img-src="@/assets/images/banner1.webp.jpg" @click="getUrl(3)"/>

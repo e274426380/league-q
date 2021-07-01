@@ -7,6 +7,7 @@
           <div class="col-md-10 offset-md-1 col-xs-12">
             <league-carousel/>
             <league-card/>
+            <league-dapps/>
           </div>
         </div>
       </div>
@@ -23,8 +24,9 @@
   import LeagueFooter from "@/components/league-footer";
   import LeagueCarousel from "@/components/league-carousel";
   import LeagueCard from "@/components/league-card";
+  import LeagueDapps from "./components/league-dapps";
   export default {
-    components: {LeagueCard, LeagueCarousel, LeagueFooter, LeagueNav},
+    components: {LeagueDapps, LeagueCard, LeagueCarousel, LeagueFooter, LeagueNav},
     data () {
       return {
         lang: "zh-CN",
