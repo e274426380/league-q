@@ -13,6 +13,21 @@
       </div>
       <div class="col-md-1"></div>
     </div>
+    <div class="idCard">
+      <label type="button" class="idInput">
+        <p>请上传身份证照片</p>
+        <input type="file" accept="image/*" ref="uploadId" @change="uploadId()" multiple/>
+        <button @click="uploadId()"></button>
+      </label>
+      <span v-if="idFileChoose">还未选择任何文件</span>
+      <span v-else>已选择</span>
+      <q-uploader
+        ref="uploader"
+        url="http://localhost:4444/upload"
+        style="max-width: 300px"
+        @change="test"
+      />
+    </div>
     <league-footer/>
   </league-nav>
 
@@ -30,6 +45,10 @@
     data () {
       return {
         lang: "zh-CN",
+        idCard: '',
+        stuCard: '',
+        idFileChoose: true,
+        stuFileChoose: true
       }
     },
     methods:{
@@ -43,7 +62,54 @@
           this.$i18n.locale="en-US";
         else if(lang==="en-US")
           this.$i18n.locale="zh-CN";
-      }
+      },
+      test(){
+        console.log(this.$refs.uploader);
+        console.log(this.$refs.uploader.files[0]);
+      },
+      uploadId () {
+        let data = this.$refs.uploadId.files[0];
+        console.log(data);
+        this.getBase64(data).then(res => {
+          this.idCard = res
+          console.log(res)
+        })
+        this.$q.dialog({
+          type: 'success',
+          message: '上传成功',
+          offset: 50
+        })
+        this.idFileChoose = false
+      },
+      // base64 格式
+      getBase64 (file) {
+        return new Promise(function (resolve, reject) {
+          let reader = new FileReader()
+          let imgResult = ''
+          reader.readAsDataURL(file)
+          reader.onload = function () {
+            imgResult = reader.result
+          }
+          reader.onerror = function (error) {
+            reject(error)
+          }
+          reader.onloadend = function () {
+            resolve(imgResult)
+          }
+        })
+      },
+      // 二进制格式
+      dataURItoBlob (dataURI) {
+        // base64 解码
+        let byteString = window.atob(dataURI.split(',')[1])
+        let mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+        let ab = new ArrayBuffer(byteString.length)
+        let ia = new Uint8Array(ab)
+        for (let i = 0; i < byteString.length; i++) {
+          ia[i] = byteString.charCodeAt(i)
+        }
+        return new Blob([ab], {type: mimeString})
+      },
     },
     mounted() {
       this.switchLang(this.lang);
