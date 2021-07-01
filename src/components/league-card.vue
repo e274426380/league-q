@@ -233,10 +233,13 @@
 </script>
 
 <style lang="scss" scoped>
-  .col-i-card{
-    width: 42%;
-    margin-left: 5%;
+  @media screen and (min-width: 800px) {
+    .col-i-card{
+         width: 42%;
+         margin-left: 5%;
+       }
   }
+
   /*卡片抬头*/
   .card-title {
     line-height: 32px;

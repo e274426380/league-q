@@ -1,23 +1,18 @@
 <template>
-
   <league-nav>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10 col-xs-12">
         <div class="row">
           <div class="col-md-10 offset-md-1 col-xs-12">
-
             <league-carousel/>
             <league-card/>
           </div>
         </div>
-
       </div>
       <div class="col-md-1"></div>
-
     </div>
     <league-footer/>
-
   </league-nav>
 
 

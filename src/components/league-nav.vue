@@ -66,7 +66,9 @@
       <!--</q-scroll-area>-->
     <!--</q-drawer>-->
     <q-page-container>
-      <slot></slot>
+      <q-page>
+        <slot></slot>
+      </q-page>
     </q-page-container>
 
   </q-layout>
