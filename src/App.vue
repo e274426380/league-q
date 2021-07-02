@@ -72,9 +72,9 @@
         console.log(data);
         this.getBase64(data).then(res => {
           this.idCard = res
-          console.log(res)
+          // console.log(res)
         })
-        this.$q.dialog({
+        this.$message({
           type: 'success',
           message: '上传成功',
           offset: 50
