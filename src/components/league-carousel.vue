@@ -61,6 +61,5 @@
   }
   .banner-logo {
     /*background-color:#EA3D5A;*/
-    background-image: url(../assets/images/logo-background.png);
   }
 </style>

@@ -13,8 +13,8 @@
             </div>
           </a>
         </div>
-        <q-card class="card-bg">
-          <div class="card-container q-ml-lg" v-for="(data,index) in libraryData" v-if="index < 5" :key="index">
+        <q-card class="card-bg q-py-lg">
+          <div class="card-container q-mx-lg" v-for="(data,index) in libraryData" v-if="index < 5" :key="index">
             <a :href="data.url" class="card-url">
                    <span class="left-ball">
                     {{data.username}}
@@ -49,8 +49,8 @@
             </div>
           </a>
         </div>
-        <q-card class="card-bg">
-          <div class="card-container  q-ml-lg" v-for="(data,index) in forumData" v-if="index < 5" :key="index">
+        <q-card class="card-bg q-py-lg">
+          <div class="card-container  q-mx-lg" v-for="(data,index) in forumData" v-if="index < 5" :key="index">
             <a :href="'https://www.icpleague.com/thread/'+data.threadId" class="card-url">
                   <span class="left-ball">
                     {{data.username}}

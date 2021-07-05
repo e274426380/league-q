@@ -15,18 +15,26 @@
     </div>
     <div class="idCard">
       <label type="button" class="idInput">
-        <p>请上传身份证照片</p>
+        <p>请上传图片</p>
         <input type="file" accept="image/*" ref="uploadId" @change="uploadId()" multiple/>
         <button @click="uploadId()"></button>
       </label>
       <span v-if="idFileChoose">还未选择任何文件</span>
       <span v-else>已选择</span>
+      <img id="getImg" alt="" :src="idCard"/>
       <q-uploader
         ref="uploader"
         url="http://localhost:4444/upload"
         style="max-width: 300px"
         @change="test"
       />
+      <section>
+        <label for="name">Enter your name: &nbsp;</label>
+        <input id="name" alt="Name" type="text" />
+        <button id="clickMeBtn">Click Me Upload Img!</button>
+        <button id="clickGetImg">Click Me Get Img!</button>
+      </section>
+      <section id="greeting"></section>
     </div>
     <league-footer/>
   </league-nav>
@@ -45,7 +53,7 @@
     data () {
       return {
         lang: "zh-CN",
-        idCard: '',
+        idCard:"",
         stuCard: '',
         idFileChoose: true,
         stuFileChoose: true
@@ -98,7 +106,7 @@
           }
         })
       },
-      // 二进制格式
+      // 二进制格式，格式有点问题
       dataURItoBlob (dataURI) {
         // base64 解码
         let byteString = window.atob(dataURI.split(',')[1])
@@ -108,6 +116,7 @@
         for (let i = 0; i < byteString.length; i++) {
           ia[i] = byteString.charCodeAt(i)
         }
+        console.log(new Blob([ab], {type: mimeString}))
         return new Blob([ab], {type: mimeString})
       },
     },
