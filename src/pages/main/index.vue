@@ -1,20 +1,9 @@
 <template>
-  <league-nav>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10 col-xs-12">
-        <div class="row">
-          <div class="col-md-10 offset-md-1 col-xs-12">
+  <Main>
             <league-carousel/>
             <league-card/>
             <league-dapps/>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <league-footer/>
-  </league-nav>
+  </Main>
 
 
 </template>
@@ -25,8 +14,9 @@
   import LeagueCarousel from "@/components/league-carousel";
   import LeagueCard from "@/components/league-card";
   import LeagueDapps from "@/components/league-dapps";
+  import Main from "../../layouts/Main";
   export default {
-    components: {LeagueDapps, LeagueCard, LeagueCarousel, LeagueFooter, LeagueNav},
+    components: {Main, LeagueDapps, LeagueCard, LeagueCarousel, LeagueFooter, LeagueNav},
     data () {
       return {
         lang: "zh-CN",

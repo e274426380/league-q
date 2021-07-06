@@ -39,37 +39,9 @@
         <div class="col-2"></div>
       </div>
     </q-header>
-    <!--左侧任务栏，用来适配移动端的顶部导航栏，未做完-->
-    <!--<q-drawer-->
-      <!--v-model="drawerLeft"-->
-      <!--show-if-above-->
-      <!--:width="200"-->
-      <!--:breakpoint="700"-->
-      <!--elevated-->
-      <!--content-class="bg-grey-3"-->
-      <!--behavior="mobile"-->
-    <!--&gt;-->
-      <!--<q-scroll-area class="fit">-->
-        <!--<q-list padding>-->
-          <!--<template v-for="(menuItem, index) in menuList">-->
-            <!--<q-item :key="index" clickable :active="menuItem.label === 'Outbox'" v-ripple>-->
-              <!--<q-item-section avatar>-->
-                <!--<q-icon :name="menuItem.icon" />-->
-              <!--</q-item-section>-->
-              <!--<q-item-section>-->
-                <!--{{ menuItem.label }}-->
-              <!--</q-item-section>-->
-            <!--</q-item>-->
-            <!--<q-separator :key="'sep' + index"  v-if="menuItem.separator" />-->
-          <!--</template>-->
-        <!--</q-list>-->
-      <!--</q-scroll-area>-->
-    <!--</q-drawer>-->
-    <q-page-container>
-      <q-page>
-        <slot></slot>
-      </q-page>
-    </q-page-container>
+    <slot>
+
+    </slot>
 
   </q-layout>
 </template>

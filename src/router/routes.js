@@ -5,6 +5,10 @@ const routes = [
     component: () => import('pages/main/index.vue'),
   },
   {
+    path: '/li',
+    component: () => import('pages/library/index.vue'),
+  },
+  {
     path: '/main',
     component: () => import('layouts/MainLayout.vue'),
     children: [
