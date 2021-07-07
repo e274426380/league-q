@@ -5,7 +5,7 @@ const routes = [
     component: () => import('pages/main/index.vue'),
   },
   {
-    path: '/li',
+    path: '/library',
     component: () => import('pages/library/index.vue'),
   },
   {

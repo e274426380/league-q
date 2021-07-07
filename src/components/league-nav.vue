@@ -8,14 +8,17 @@
             <q-toolbar-title>
               <!--左侧任务栏按钮-->
               <!--<q-btn flat @click="drawerLeft = !drawerLeft" round dense icon="menu" />-->
+              <router-link  to="/">
               <q-btn flat no-caps no-wrap class="q-ml-xs" v-if="$q.screen.gt.xs">
                 <img alt="icp-logo" class="nav-icon" src="@/assets/images/logo@2x.png"/>
               </q-btn>
+              </router-link>
             </q-toolbar-title>
-
+            <router-link  to="/library">
             <q-btn stretch flat :label="$t('button.library')"
                    no-caps
                    type="a" href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men" target="__blank"/>
+            </router-link>
             <q-btn stretch flat :label="$t('button.dapps')"
                    no-caps/>
             <q-btn stretch flat :label="$t('button.forum')"
