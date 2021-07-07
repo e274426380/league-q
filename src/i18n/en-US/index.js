@@ -16,6 +16,7 @@ export default {
     'more':"More",
     'submit':"Submit Information",
     'language':"English",
+    'learn-more':"Learn More",
   },
   footer:{
     'subtitle':"Building the best Chinese community of dfinity",

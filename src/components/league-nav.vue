@@ -34,7 +34,6 @@
               rounded
               class="q-btn-i q-ml-md"
               :label="$t('button.login')"
-
               no-caps
             />
           </q-toolbar>

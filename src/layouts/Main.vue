@@ -28,20 +28,10 @@
     <!--</q-drawer>-->
     <q-page-container>
       <q-page>
-         <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10 col-xs-12">
-            <div class="row">
-              <div class="col-md-10 offset-md-1 col-xs-12">
-                <slot>
+        <slot>
 
-                </slot>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-1"></div>
-        </div>
-          <league-footer/>
+        </slot>
+        <league-footer/>
       </q-page>
     </q-page-container>
 

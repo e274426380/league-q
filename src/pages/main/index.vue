@@ -1,8 +1,19 @@
 <template>
   <Main>
-            <league-carousel/>
-            <league-card/>
-            <league-dapps/>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 col-xs-12">
+        <div class="row">
+          <div class="col-md-10 offset-md-1 col-xs-12">
+              <league-carousel/>
+              <league-card/>
+              <league-dapps/>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
   </Main>
 
 

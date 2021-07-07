@@ -16,6 +16,7 @@ export default {
     'more':"更多",
     'submit':"提交应用信息",
     'language':"中文",
+    'learn-more':"学习更多",
   },
   footer:{
     'subtitle':"建立最好的Dfinity中文社区",
