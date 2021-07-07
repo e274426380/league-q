@@ -31,10 +31,6 @@
     data () {
       return {
         lang: "zh-CN",
-        idCard:"",
-        stuCard: '',
-        idFileChoose: true,
-        stuFileChoose: true
       }
     },
     methods:{

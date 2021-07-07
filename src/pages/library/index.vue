@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
   <Main>
       <div class="row section">
         <div class="col-1"></div>
@@ -14,16 +14,48 @@
         </div>
       </div>
     <div class="row section">
-
+          <div class="row">
+            <q-input color="teal" outlined v-model="text">
+              <template v-slot:append>
+                <q-icon class="cursor-pointer" @click="copyToClipboard()" name="bi-files" />
+              </template>
+            </q-input>
+          </div>
     </div>
   </Main>
 </template>
 
 <script>
   import Main from "../../layouts/Main";
+  import { copyToClipboard } from 'quasar'
     export default {
-        name: "index.vue",
+      name: "index.vue",
       components: {Main},
+      data () {
+        return {
+          text: "$ sudo -i  \"$(curl -fsSL http://sdk.abc.com)\"",
+        }
+      },
+      methods:{
+        copyToClipboard(){
+          // quasar自带粘贴到剪贴板方法
+          copyToClipboard(this.text)
+            .then(() => {
+              // 成功!
+              this.$q.notify({
+                message: this.$t('success'),
+                color: 'green'
+              })
+            })
+            .catch(() => {
+              // 失败
+              this.$q.notify({
+                message: this.$t('failed'),
+                color: 'red'
+              })
+            })
+        }
+      }
     }
 </script>
 
