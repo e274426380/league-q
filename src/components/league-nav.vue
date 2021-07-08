@@ -14,11 +14,8 @@
               </q-btn>
               </router-link>
             </q-toolbar-title>
-            <router-link  to="/library">
             <q-btn stretch flat :label="$t('button.library')"
-                   no-caps
-                   type="a" href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men" target="__blank"/>
-            </router-link>
+                   no-caps to="library"/>
             <q-btn stretch flat :label="$t('button.dapps')"
                    no-caps/>
             <q-btn stretch flat :label="$t('button.forum')"
