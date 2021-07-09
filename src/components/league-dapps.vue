@@ -10,29 +10,32 @@
       <!--:key="index">Tab {{index+1}}</el-button>-->
       <!--以tag的形式筛选-->
       <q-btn unelevated class="q-btn-i q-ml-lg" type="danger" round @click="dappChange('All')"
-                 :class="{active:'All'===tagButton}">All</q-btn>
+             :class="{active:'All'===tagButton}">All
+      </q-btn>
       <q-btn unelevated class="q-btn-i q-ml-lg" type="danger" round @click="dappChange(tag)"
-                 :class="{active:tag===tagButton}"
-                 v-for="(tag, index) in tags"
-                 :key="index">{{tag}}</q-btn>
+             :class="{active:tag===tagButton}"
+             v-for="(tag, index) in tags"
+             :key="index">{{tag}}
+      </q-btn>
     </div>
     <div class="dapps row no-wrap items-center">
-        <div class="col-1 dapps-left-arrow q-mt-lg" @click="prePage">
-          <img alt="" src="@/assets/images/icon/dapps_left_nor.png"/>
-        </div>
-        <div class="row col-10">
-          <div class="col-2 right-move" v-for="(dapp,index) in dappsData" :key="index">
-            <div class="col-2 q-mt-lg">
-              <a :href="dapp.url" class="dapps-url">
-                <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>
-                  <br/>
-                  <b>{{dapp.title}}</b></div></a>
-            </div>
+      <div class="col-1 dapps-left-arrow q-mt-lg" @click="prePage">
+        <img alt="" src="@/assets/images/icon/dapps_left_nor.png"/>
+      </div>
+      <div class="row col-10" style=" align-self: flex-start;">
+        <div class="col-2 right-move" v-for="(dapp,index) in dappsData" :key="index">
+          <div class="col-2 q-mt-lg">
+            <a :href="dapp.url" class="dapps-url">
+              <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>
+                <br/>
+                <b>{{dapp.title}}</b></div>
+            </a>
           </div>
         </div>
+      </div>
       <div class="col-1 dapps-right-arrow q-mt-lg q-pl-md" @click="nextPage">
-      <img alt="" src="@/assets/images/icon/dapps_right_nor.png"/>
-    </div>
+        <img alt="" src="@/assets/images/icon/dapps_right_nor.png"/>
+      </div>
     </div>
   </div>
 </template>
