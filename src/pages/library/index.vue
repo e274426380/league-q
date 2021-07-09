@@ -95,26 +95,29 @@
       </div>
       <div class="row container">
         <div class="col-11">
-          <q-card class="my-card q-mb-lg" flat bordered  v-for="(activity,index) in activities" :key="index">
-            <q-card-section horizontal>
-              <q-img
-                class="col-2"
-                :src=activity.imgSrc
-              />
-              <q-card-section>
-                <div class="row items-center q-mb-md">
-                  <div class="col-7">
-                    <span class="text-h4">{{activity.title}}</span>
+          <q-card class="my-card q-mb-lg" flat bordered v-for="(activity,index) in activities" :key="index">
+            <!--限制数量小于3个-->
+            <template v-if="index < 3">
+              <q-card-section horizontal>
+                <q-img
+                  class="col-2"
+                  :src=activity.imgSrc
+                />
+                <q-card-section>
+                  <div class="row items-center q-mb-md">
+                    <div class="col-7">
+                      <span class="text-h4">{{activity.title}}</span>
+                    </div>
+                    <div class="col-4">
+                      <span class="text-h5" style="float: right">{{activity.startDate}} - {{activity.endDate}}</span>
+                    </div>
                   </div>
-                  <div class="col-4">
-                    <span class="text-h5" style="float: right">{{activity.startDate}} - {{activity.endDate}}</span>
+                  <div class="row">
+                    {{activity.text}}
                   </div>
-                </div>
-                <div class="row">
-                  {{activity.text}}
-                </div>
+                </q-card-section>
               </q-card-section>
-            </q-card-section>
+            </template>
           </q-card>
         </div>
       </div>

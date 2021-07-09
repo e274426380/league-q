@@ -5,33 +5,36 @@
         <div class="row card-title">
           <div class="col-10">
             <img class="body-logo" alt="library" src="@/assets/images/icon/cd_Library@2x.png">
-            <b >{{$t('button.library')}}</b>
+            <b>{{$t('button.library')}}</b>
           </div>
           <a href="https://shuzhichengspace.gitbook.io/dfinity/yi-kuai-su-ru-men">
             <div class="col-2">
-              <q-icon name="bi-chevron-right" /><p>{{$t('button.more')}}</p>
+              <q-icon name="bi-chevron-right"/>
+              <p>{{$t('button.more')}}</p>
             </div>
           </a>
         </div>
         <q-card class="card-bg q-py-lg">
-          <div class="card-container q-mx-lg" v-for="(data,index) in libraryData" v-if="index < 5" :key="index">
-            <a :href="data.url" class="card-url">
+          <div class="card-container q-mx-lg" v-for="(data,index) in libraryData" :key="index">
+            <template v-if="index < 5">
+              <a :href="data.url" class="card-url">
                    <span class="left-ball">
                     {{data.username}}
                   </span>
-              <div class="card-main">
-                <div slot="header" class="card-header">
-                  <b>{{data.title}}</b>
+                <div class="card-main">
+                  <div slot="header" class="card-header">
+                    <b>{{data.title}}</b>
+                  </div>
+                  <div class="card-content">
+                    <span>{{data.content}}</span>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <span>{{data.content}}</span>
-                </div>
-              </div>
-              <!--当只有5个数据时，保证最下面的一根线不显示-->
-              <hr v-if="index<4" align="left"/>
-              <!--让卡片最下面的数据有间距，不至于hover时紧贴文字最下方-->
-              <div v-else style="padding-bottom: 10px"></div>
-            </a>
+                <!--当只有5个数据时，保证最下面的一根线不显示-->
+                <hr v-if="index<4" align="left"/>
+                <!--让卡片最下面的数据有间距，不至于hover时紧贴文字最下方-->
+                <div v-else style="padding-bottom: 10px"></div>
+              </a>
+            </template>
           </div>
         </q-card>
       </div>
@@ -45,28 +48,31 @@
           </div>
           <a href="https://www.icpleague.com/">
             <div class="col-2">
-              <q-icon name="bi-chevron-right" /><p>{{$t('button.more')}}</p>
+              <q-icon name="bi-chevron-right"/>
+              <p>{{$t('button.more')}}</p>
             </div>
           </a>
         </div>
         <q-card class="card-bg q-py-lg">
-          <div class="card-container  q-mx-lg" v-for="(data,index) in forumData" v-if="index < 5" :key="index">
-            <a :href="'https://www.icpleague.com/thread/'+data.threadId" class="card-url">
+          <div class="card-container  q-mx-lg" v-for="(data,index) in forumData" :key="index">
+            <template v-if="index < 5">
+              <a :href="'https://www.icpleague.com/thread/'+data.threadId" class="card-url">
                   <span class="left-ball">
                     {{data.username}}
                   </span>
-              <div class="card-main">
-                <div slot="header" class="card-header">
-                  <b>{{data.title}}</b>
+                <div class="card-main">
+                  <div slot="header" class="card-header">
+                    <b>{{data.title}}</b>
+                  </div>
+                  <div class="card-content">
+                    <span>{{data.content}}</span>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <span>{{data.content}}</span>
-                </div>
-              </div>
-              <!--当只有5个数据时，保证最下面的一根线不显示-->
-              <hr v-if="index<4" align="left"/>
-              <div v-else style="padding-bottom: 10px"></div>
-            </a>
+                <!--当只有5个数据时，保证最下面的一根线不显示-->
+                <hr v-if="index<4" align="left"/>
+                <div v-else style="padding-bottom: 10px"></div>
+              </a>
+            </template>
           </div>
         </q-card>
       </div>
