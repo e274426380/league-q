@@ -48,9 +48,7 @@
   }
   .footer {
     background: #1F2937;
-    padding-top: 50px;
-    /*padding-bottom: 400px;*/
-    padding: 0px;
+    padding-bottom: 50px;
     color: #8590A6;
     font-weight: bold;
     font-size: 14px;

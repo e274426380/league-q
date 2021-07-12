@@ -1,15 +1,17 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
   <Main>
     <div class="row section">
-      <div class="col-5 offset-1">
-        <b style="font-size: 90px;">DFINITY Library</b>
-        <p STYLE="font-size: 32px;">No experience, no worries! Work hands-on with top leaders in
-          Difinity blockchain to level up your development skills.</p>
-        <q-btn rounded color="blue-5" :label="$t('button.learn-more')" no-caps
-               style="width: 150px"></q-btn>
-      </div>
-      <div class="col-5 q-ml-xl">
-        <img id="u346_img" src="@/assets/images/blank.svg">
+      <div class="row container">
+        <div class="col-6 ">
+          <b style="font-size: 90px;">DFINITY Library</b>
+          <p STYLE="font-size: 32px;">No experience, no worries! Work hands-on with top leaders in
+            Difinity blockchain to level up your development skills.</p>
+          <q-btn rounded color="blue-5" :label="$t('button.learn-more')" no-caps
+                 style="width: 150px"></q-btn>
+        </div>
+        <div class="col-5 q-ml-xl">
+          <img id="u346_img" src="@/assets/images/blank.svg">
+        </div>
       </div>
     </div>
     <div class="row section">

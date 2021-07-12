@@ -2,8 +2,8 @@
   <q-layout view="hHh lpR fFf" >
     <q-header elevated class="nav-menu bg-i-grey text-grey-8 q-py-xs" height-hint="58">
       <div class="row">
-        <div class="col-2"></div>
-        <div class="col-md-8 col-xs-12">
+        <div class="col-1"></div>
+        <div class="col-md-9 col-xs-12">
           <q-toolbar>
             <q-toolbar-title>
               <!--左侧任务栏按钮-->
