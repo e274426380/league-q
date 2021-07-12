@@ -18,11 +18,11 @@
              :key="index">{{tag}}
       </q-btn>
     </div>
-    <div class="dapps row no-wrap items-center">
+    <div class="dapps row items-center q-mb-lg">
       <div class="col-1 dapps-left-arrow q-mt-lg" @click="prePage">
         <img alt="" src="@/assets/images/icon/dapps_left_nor.png"/>
       </div>
-      <div class="row col-10" style=" align-self: flex-start;">
+      <div class="row col-10" style="align-self: flex-start;">
         <div class="col-2 right-move" v-for="(dapp,index) in dappsData" :key="index">
           <div class="col-2 q-mt-lg">
             <a :href="dapp.url" class="dapps-url">
@@ -230,9 +230,9 @@
       width: 150px;
       height: 150px;
     }
-    .row {
-      margin-top: 40px;
-    }
+    /*.row {*/
+      /*margin-top: 40px;*/
+    /*}*/
     /*dapps图标控制*/
     .row .col{
       float: left;

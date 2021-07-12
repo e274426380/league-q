@@ -122,6 +122,27 @@
         </div>
       </div>
     </div>
+    <div class="row section">
+      <div class="row container q-mt-lg">
+            <span class="text-h4 text-weight-bolder">Community</span>
+      </div>
+      <div class="row container q-my-lg">
+        <div class="col-6">
+          <img src="@/assets/images/blank.svg"/>
+        </div>
+        <div class="col-6">
+          <img src="@/assets/images/blank.svg"/>
+        </div>
+      </div>
+      <div class="row container q-my-lg">
+        <div class="col">
+          <span class="text-h4 text-weight-bolder">Contact Us</span>
+          <br/>
+          <span class="text-h6">Whether you're working on a specific project, or you're still exploring possibilities,
+            you can connect with our team for guidance.</span>
+        </div>
+      </div>
+    </div>
   </Main>
 </template>
 

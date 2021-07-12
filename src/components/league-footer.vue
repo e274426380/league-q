@@ -48,7 +48,7 @@
   }
   .footer {
     background: #1F2937;
-    margin-top: 50px;
+    padding-top: 50px;
     /*padding-bottom: 400px;*/
     padding: 0px;
     color: #8590A6;
