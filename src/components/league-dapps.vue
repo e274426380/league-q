@@ -23,7 +23,7 @@
         <img alt="" src="@/assets/images/icon/dapps_left_nor.png"/>
       </div>
       <div class="row col-10" style="align-self: flex-start;">
-        <div class="col-2 right-move" v-for="(dapp,index) in dappsData" :key="index">
+        <div class="col-2 q-mr-lg" v-for="(dapp,index) in dappsData" :key="index">
           <div class="col-2 q-mt-lg">
             <a :href="dapp.url" class="dapps-url">
               <div class="dapps-logo"><img alt="dapps" :src=dapp.logoSrc>

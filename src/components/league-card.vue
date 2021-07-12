@@ -30,7 +30,7 @@
                   </div>
                 </div>
                 <!--当只有5个数据时，保证最下面的一根线不显示-->
-                <hr v-if="index<4" align="left"/>
+                <q-separator v-if="index<4" inset/>
                 <!--让卡片最下面的数据有间距，不至于hover时紧贴文字最下方-->
                 <div v-else style="padding-bottom: 10px"></div>
               </a>
@@ -69,7 +69,7 @@
                   </div>
                 </div>
                 <!--当只有5个数据时，保证最下面的一根线不显示-->
-                <hr v-if="index<4" align="left"/>
+                <q-separator v-if="index<4" inset/>
                 <div v-else style="padding-bottom: 10px"></div>
               </a>
             </template>
@@ -307,9 +307,6 @@
     height: 110px;
   }
   .card-container hr{
-    border: 1px;
-    width: 450px;
-    height: 1px;
     background: #374151;
   }
   .card-header{
