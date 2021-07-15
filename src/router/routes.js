@@ -9,6 +9,10 @@ const routes = [
     component: () => import('pages/library/index.vue'),
   },
   {
+    path: '/dapps',
+    component: () => import('pages/dapps/index.vue'),
+  },
+  {
     path: '/main',
     component: () => import('layouts/MainLayout.vue'),
     children: [

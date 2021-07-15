@@ -17,7 +17,7 @@
             <q-btn stretch flat :label="$t('button.library')"
                    no-caps to="library"/>
             <q-btn stretch flat :label="$t('button.dapps')"
-                   no-caps/>
+                   no-caps to="dapps"/>
             <q-btn stretch flat :label="$t('button.forum')"
                    no-caps
                    type="a" href="https://www.icpleague.com/" target="__blank"/>

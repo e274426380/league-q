@@ -1,20 +1,20 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
   <Main>
-    <div class="row section">
+    <div class="row section head">
       <div class="row container">
         <div class="col-6 ">
           <b style="font-size: 90px;">DFINITY Library</b>
-          <p STYLE="font-size: 32px;">No experience, no worries! Work hands-on with top leaders in
+          <p style="font-size: 32px;">No experience, no worries! Work hands-on with top leaders in
             Difinity blockchain to level up your development skills.</p>
           <q-btn rounded color="blue-5" :label="$t('button.learn-more')" no-caps
                  style="width: 150px"></q-btn>
         </div>
-        <div class="col-5 q-ml-xl">
+        <div class="col-6 q-pl-xl">
           <img id="u346_img" src="@/assets/images/blank.svg">
         </div>
       </div>
     </div>
-    <div class="row section">
+    <div class="row section feature">
       <div class="row container q-my-lg">
         <div class="col-6" style="margin: 0 auto">
           <q-input color="teal" outlined v-model="text" readonly>
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="row section">
+    <div class="row section wishList">
       <div class="row container q-my-lg q-col-gutter-xl">
         <div class="col-3" v-for="(mod,index) in mods" :key="`xl-${index}`">
           <q-card class="my-card">
@@ -77,14 +77,15 @@
       </div>
       <div class="row container q-my-lg items-center">
         <div class="col-10 offset-1">
-          <img style="width: 1374px;height: 300px;" src="@/assets/images/blank.svg"/>
+          <img style="width: 1374px;height: 300px;" src="@/assets/images/blank.svg"
+                />
           <div class="img_text">
-            <p><span>WishList</span></p>
+            <p><span @click="wishList = true">WishList</span></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="row section">
+    <div class="row section activity">
       <div class="row container">
         <div class="col-8">
           <p class="text-h4">Learn by Activity</p>
@@ -124,7 +125,7 @@
         </div>
       </div>
     </div>
-    <div class="row section">
+    <div class="row section community">
       <div class="row container q-mt-lg">
             <span class="text-h4 text-weight-bolder">Community</span>
       </div>
@@ -145,6 +146,37 @@
         </div>
       </div>
     </div>
+    <q-dialog v-model="wishList">
+      <q-card>
+        <q-card-section>
+          <q-form
+            @submit="onSubmit"
+            @reset="onReset"
+            class="q-gutter-md">
+            <q-input
+              filled
+              v-model="name"
+              label="Your name *"
+              hint="Name and surname"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+            <q-input
+              filled
+              type="number"
+              v-model="age"
+              label="Your age *"
+              lazy-rules
+              :rules="[val => val !== null && val !== '' || 'Please type your age',
+              val => val > 0 && val < 100 || 'Please type a real age']"/>
+            <q-toggle v-model="accept" label="I accept the license and terms"/>
+            <div>
+              <q-btn label="Submit" type="submit" color="primary"/>
+              <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm"/>
+            </div>
+          </q-form>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </Main>
 </template>
 
@@ -248,6 +280,10 @@
             'eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
             'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           text: "$ sudo -i  \"$(curl -fsSL http://sdk.abc.com)\"",
+          wishList:false,
+          name: null,
+          age: null,
+          accept: false
         }
       },
       methods:{
@@ -268,6 +304,29 @@
                 color: 'red'
               })
             })
+        },
+        onSubmit () {
+          if (this.accept !== true) {
+            this.$q.notify({
+              color: 'red-5',
+              textColor: 'white',
+              icon: 'warning',
+              message: 'You need to accept the license and terms first'
+            })
+          }
+          else {
+            this.$q.notify({
+              color: 'green-4',
+              textColor: 'white',
+              icon: 'cloud_done',
+              message: 'Submitted'
+            })
+          }
+        },
+        onReset () {
+          this.name = null;
+          this.age = null;
+          this.accept = false;
         }
       }
     }
