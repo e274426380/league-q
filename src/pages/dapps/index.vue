@@ -45,24 +45,84 @@
     </div>
     <div class="row section dapps q-pt-lg">
       <div class="row container">
-        <div class="row q-gutter-x-md">
+        <div class="col-5 q-gutter-x-md">
             <q-btn no-caps>Sort:  {{tag}}  ({{number}})</q-btn>
             <q-btn no-caps v-for="tag in tags">
               {{tag}}
             </q-btn>
-          <q-space/>
-          <q-input bottom-slots v-model="text" label="Label" counter :dense="dense">
-            <template v-slot:prepend>
-              <q-icon name="place" />
-            </template>
-            <template v-slot:append>
-              <q-icon name="close" @click="text = ''" class="cursor-pointer" />
-            </template>
+        </div>
+            <q-space />
+            <q-input style="max-width: 300px" bottom-slots v-model="search" :dense="dense">
+              <template v-slot:prepend>
+                <q-icon name="bi-search" />
+              </template>
+              <template v-slot:append>
+                <q-icon name="close" @click="search = ''" class="cursor-pointer" />
+              </template>
+            </q-input>
+      </div>
+      <div class="row container q-col-gutter-md">
+        <div class="col-4" v-for="index in 4">
+        <q-card class="my-card q-pa-lg" flat bordered>
+          <q-item>
+            <q-item-section style="align-self: flex-start;" horizontal avatar>
+              <q-avatar  size="80px">
+                <img src="@/assets/images/blank.svg">
+              </q-avatar>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="items-center">
+                  <div class="text-h5">Dapp Name <q-badge align="top" color="red">Hot</q-badge></div>
+                <q-avatar size="30px" class="q-mr-md">
+                  <img src="@/assets/images/blank.svg">
+                </q-avatar>
+                <q-avatar size="30px"  class="q-mr-md">
+                  <img src="@/assets/images/blank.svg">
+                </q-avatar>
+                 <span class="text-weight-bold text-grey">+ {{number}} Grants</span>
+              </q-item-label>
+              <q-separator class="q-my-sm"/>
+              <q-item-label caption>
+                <span class="text-weight-bold">Your dapp product description according in this area</span>
+              </q-item-label>
+              <q-item-label>
+                <div class="q-gutter-md">
+                  <q-badge align="middle"> NFT </q-badge>
+                  <q-badge align="middle"> DeFi </q-badge>
+                  <q-badge align="middle"> Social </q-badge>
+                </div>
+              </q-item-label>
+              <q-item-label>
+                <div class="q-gutter-xs">
+                  <q-avatar size="25px" color="black">
+                    <q-icon name="bi-twitter" color="white"/>
+                  </q-avatar>
+                  <q-avatar size="25px" color="black">
+                    <q-icon name="bi-github" color="white"/>
+                  </q-avatar>
+                  <q-avatar size="25px" color="black">
+                    <q-icon name="bi-twitter" color="white"/>
+                  </q-avatar>
+                </div>
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-card-action>
+            <div class="row q-gutter-sm q-mb-md">
+              <div class="col-4 q-pl-xs">
+                <q-btn class="full-width" color="blue-6" >
+                  <q-icon class="flip-horizontal" name="bi-reply-fill"></q-icon>
+                </q-btn>
+              </div>
+              <div class="col-7">
+                <q-btn class="full-width" color="blue-6"
+                       icon="bi-box-arrow-in-right"
+                       no-caps label="View" />
+              </div>
+            </div>
 
-            <template v-slot:hint>
-              Field hint
-            </template>
-          </q-input>
+          </q-card-action>
+        </q-card>
         </div>
       </div>
     </div>
@@ -82,7 +142,8 @@
           tags:[
             "All","NFT","DeFi","Social"
           ],
-          number:"3"
+          number:3,
+          search:"",
         }
       },
       methods:{
@@ -104,5 +165,9 @@
   }
   .q-carousel__slide:hover{
     cursor:pointer;
+  }
+  .my-card{
+  width: 100%;
+  /*max-width: 350px;*/
   }
 </style>
